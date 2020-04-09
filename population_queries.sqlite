@@ -1,4 +1,4 @@
-World Populations SQL Practice
+--World Populations SQL Practice
 -- 4. What is the largest population size for Gabon in this dataset?
 -- 5. What were the 10 lowest population countries in 2005?
 -- 6. What are all the distinct countries with a population of over 100 million in the year 2010?
@@ -16,18 +16,22 @@ FROM population_years
 WHERE country = 'Gabon'
 ORDER BY population DESC
 LIMIT 1;
+
 -- Q5 --
 SELECT *
 FROM population_years
 WHERE year = 2005
 ORDER BY population ASC
 LIMIT 10;
+
 -- Q6 --
 SELECT DISTINCT country FROM population_years
 WHERE population > 100 AND year = 2010;
+
 -- Q7 -- Manual count
 SELECT DISTINCT country FROM population_years
 WHERE country LIKE '%islands%';
+
 -- Q8 --
 SELECT * FROM population_years
 WHERE country = 'Indonesia' AND year LIKE '20_0';
