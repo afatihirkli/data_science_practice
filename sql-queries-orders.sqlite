@@ -1,0 +1,32 @@
+ -- Codecademy SQL Exercise : Davie's Burgers Subway Ad --
+--- Q1 ---
+SELECT * FROM orders
+LIMIT 20;
+--- Q2 ---
+SELECT DISTINCT order_date
+FROM orders;
+--- Q3 ---
+SELECT special_instructions
+FROM orders
+LIMIT 20;
+--- Q4 ---
+SELECT special_instructions FROM orders
+WHERE special_instructions IS NOT NULL;
+--- Q5 ---
+SELECT special_instructions FROM orders
+WHERE special_instructions IS NOT NULL
+ORDER BY special_instructions ASC;
+--- Q6 ---
+SELECT special_instructions FROM orders
+WHERE special_instructions LIKE '%sauce%';
+--- Q7 ---
+SELECT special_instructions FROM orders
+WHERE special_instructions LIKE '%door%';
+--- Q8 ---
+SELECT special_instructions FROM orders
+WHERE special_instructions LIKE '%box%';
+--- Q9 ---
+SELECT id AS '#', special_instructions AS 'Notes'
+FROM orders
+WHERE special_instructions LIKE '%box%';
+--- Q10 ---
