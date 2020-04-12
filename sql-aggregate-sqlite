@@ -1,0 +1,47 @@
+-- SQL Aggregate Functions Codecademy Exercise : Trends in Startups --
+-- Q1 --
+SELECT * FROM startups;
+-- Q2 --
+SELECT COUNT(name) FROM startups;
+-- Q3 --
+SELECT SUM(valuation) FROM startups;
+-- Q4 --
+SELECT MAX(raised) FROM startups;
+-- Q5 --
+SELECT MAX(raised) FROM startups
+WHERE stage = 'Seed';
+-- Q6 --
+SELECT MIN(founded) FROM startups;
+-- Q7 --
+SELECT AVG(valuation) FROM startups;
+-- Q8 --
+SELECT category, AVG(valuation) AS 'value' 
+FROM startups
+GROUP BY category;
+-- Q9 --
+SELECT category, ROUND(AVG(valuation),2) AS 'value' 
+FROM startups
+GROUP BY category;
+-- Q10 --
+SELECT category, ROUND(AVG(valuation),2)
+FROM startups
+GROUP BY category
+ORDER BY 2 DESC;
+-- Q11 --
+SELECT category, COUNT(category)
+FROM startups
+GROUP BY category;
+-- Q12 --
+SELECT category, COUNT(category) AS total
+FROM startups
+GROUP BY category
+HAVING total > 3;
+-- Q13 --
+SELECT location, AVG(employees)
+FROM startups
+GROUP BY location;
+-- Q14 ---
+SELECT location, AVG(employees)
+FROM startups
+GROUP BY 1
+HAVING AVG(employees) > 500;
