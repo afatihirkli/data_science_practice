@@ -1,3 +1,37 @@
 -- SQL Aggregate Functions Codecademy Exercise : The Metropolitan Museum of Art --
 -- Q1 --
 SELECT * FROM met LIMIT 10;
+-- Q2 --
+SELECT COUNT(department) FROM met;
+-- Q3 --
+SELECT COUNT(category) FROM met
+WHERE category LIKE '%celery%';
+-- Q4 --
+SELECT date, title, medium
+FROM met
+ORDER BY date ASC
+LIMIT 10;
+-- Q5 --
+SELECT country FROM met
+GROUP BY country
+ORDER BY COUNT(country) DESC
+LIMIT 10;
+-- Q6 --
+SELECT category, COUNT(category) FROM met
+GROUP BY 1
+HAVING COUNT(category)>100;
+-- Q7 --
+SELECT medium, COUNT(*) FROM met
+WHERE medium LIKE '%gold%' OR medium LIKE '%silver%'
+GROUP BY medium
+ORDER BY 2 DESC;
+-- Q7 Alternative --
+SELECT CASE
+    WHEN medium LIKE '%gold%' THEN 'Gold'
+    WHEN medium LIKE '%silver%' THEN 'Silver'
+    ELSE NULL
+  END AS 'Material',
+  Count(*)
+FROM met
+WHERE Material IS NOT NULL
+GROUP BY 1 ORDER BY 2 desc;
