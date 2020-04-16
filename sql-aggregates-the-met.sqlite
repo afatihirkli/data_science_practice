@@ -1,0 +1,3 @@
+-- SQL Aggregate Functions Codecademy Exercise : The Metropolitan Museum of Art --
+-- Q1 --
+SELECT * FROM met LIMIT 10;
